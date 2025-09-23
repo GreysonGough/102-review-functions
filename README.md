@@ -2,63 +2,30 @@
 
 ## Objectives
 * to review and remember
-  1. naming of functions
-  2. use of (input) parameters
-  3. use of return values
-  4. local scope
+  1. when to use functions
 
 
-Recall that functions are mini programs that you can *call* from your main block of code, or from other mini programs by using the function name.  A function may have input parameters (sometimes called parameters) that are variable names included in the brackets of the function definition.
+Functions are really intended to be small blocks of code.  One very overlooked value of functions is to make small decisions and return True or False values to help make your conditional statements much easier to read.
 
-```
-def functionName(parameter1,parameter2):
-  pass
+We can use complex conditional statements using multiple *and* and *or* connectors, but we could also make them available in a function that returns a boolean value.
 
-functionName(3,4)
-functionName(parameter2 = 4, parameter1 = 3)
-```
-In this sample function, parameter1 and parameter2 are 2 variable names that serve as place holders for data that you will send the function when you *call* it by using the function name.  You include the values you want to use in those variables, in order.  Note that you can also choose to specify the values directly by name, in which case they do not need to be in order.
+Consider the sample1.py program.
 
-The command "pass" is also a placeholder, it does nothing but helps preserve the fact that a function contains a block of code.
+At other times, we might want to create a function that returns multiple return values!  Maybe you need an x-y coordinate, or even an x-y-z coordinate!
 
-Note that other variables that are used in a function are local values.  They do not exist outside of a function. Take a look at the program in "scope.py".  Even though y is defined in the main block of code, the program has an error when we try to use y inside the function.  You will also notice that the program crashes when it gets to line 11, because x only exists within the function.  We say that the variable y has a "global scope" and that x has a "local scope".  x is local to the function and can only be used in the function.
-You could force the use of y within the function by adding line 4:
-```
-line4: global y
-```
-This tells the function to make use of the global value of y, and change the value of y in the global scope if it is changed in the function. However, it is much better practice to instead send the value of y as an input parameter if you need to use it within the function.
+Open up sample2.py and see how it looks!
 
-A function is intended to return a specific value.
+Assignment 1:
+Create a function called **isNegative(float)** that takes a float parameter.  Return a boolean value to indicate whether the result is True or False
 
-## Assignment
-### Assignment 1
-#### Random Recipe
-Create a function that chooses a random ingredient from a list and returns a string that contains ingredient along with a random value
+Assignment 2:
+Create a function called "**isHappy(float)**.  This will return a boolean value that meets the following criteria:
+* it is a number
+* is an integer
+* it is positive
 
-Your program should call the function several times and display the result.
+Assignment 3:
+Create a function called **isPerfectSquare(float)**.  This will return a True value if the number is a perfect square
 
-Criteria:
-* use a loop to repeat a block of commands 5 times
-* each block should retrieve one value from the function and display it on a line
-* you will need to make use of the "random" module (import random) to access the class methods/functions to help you generate random numbers and select random items from a list.
-
-
-### Assignment 2
-#### Check Divisibility
-Create a function that receives 2 numbers, divisor and dividend. Return a boolean value (True or False) that indicates whether the first number is evenly divisible by another number
-
-Criteria:
-* best way to check divisibilty is using the modulus & operator
-
-
-### Assignment 3
-#### User Input
-Create a function that asks the user to enter an integer number.  Return this value as your output.  This allows you to keep your error checking/try except statements out of your main block to keep your main block more concise.
-
-Criteria
-* the function does not need an input parameter
-* the function returns an integer value
-
-### Assignment 4
-#### Prime factorization
-Create a program that incorporates assignment 2 and 3 to do the prime factorizations for a number.  You will need to develop an algorithm to determine how you can do this.  If you can't figure it out by the beginning of next class, your teacher will provide you with some pseudocode/a method for determining how you can do this.
+Assignment 4:
+Create a function called **isPythagoreanTriple(a,b,c)**.  This will return a True value if the 3 numbers form a pytyagorean triple.  Note that you will ahve to decide which number would be the hypotenuse
